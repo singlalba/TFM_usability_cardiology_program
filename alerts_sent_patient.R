@@ -1,5 +1,9 @@
 # ALERTS SENT PATIENT
 
+library(dplyr)
+library(data.table)
+library(ggplot2)
+
 #Load the data
 work_dir <- getwd()
 route <- file.path(work_dir, "alerts_sent_patient.csv")
@@ -57,7 +61,7 @@ ggplot(alerts, aes(x = alerts$alarm, y = alerts$proportion, fill = alerts$alarm)
 # TYPE OF ALERTS PER PATIENT
 
 # % of each alert 
-prop.table(table(alerts_sent_dashboard$target, alerts_sent_dashboard$extraParameters.description))*100
+prop.table(table(alerts_sent_patient$user_uuid, alerts_sent_patient$code))*100
 
 percent1 <- alerts_sent_patient %>%
   group_by(user_uuid, code) %>%
