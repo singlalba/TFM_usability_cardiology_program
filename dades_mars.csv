@@ -1,0 +1,175 @@
+PROFESIONAL,PUNTUACIO,SECCIO,PREGUNTA
+1,4,A,Entertainment
+1,4,A,Interest
+1,5,A,Customization
+1,4,A,Interactivity
+1,5,A,Target group
+1,4,B,Performance
+1,4,B,Ease of use
+1,4,B,Navigation
+1,4,B,Gestural design
+1,4,C,Layout
+1,4,C,Graphics
+1,4,C,Visual appeal
+1,4,D,Precision in description
+1,4,D,Objectives
+1,5,D,Quality of information
+1,4,D,Quantity of information
+1,4,D,Visual information
+1,4,D,Credibility
+1,,D,Scientific basis
+1,5,E,Would recommend
+1,,E,Use if relevant
+1,1,E,Would pay
+1,4,E,General qualification
+1,5,F,Awareness
+1,5,F,Knowledge
+1,4,F,Aptitudes
+1,4,F,Intention to change
+1,4,F,Help seeking
+1,4,F,Behaviour change
+2,4,A,Entertainment
+2,3,A,Interest
+2,5,A,Customization
+2,5,A,Interactivity
+2,5,A,Target group
+2,4,B,Performance
+2,4,B,Ease of use
+2,4,B,Navigation
+2,4,B,Gestural design
+2,3,C,Layout
+2,4,C,Graphics
+2,3,C,Visual appeal
+2,4,D,Precision in description
+2,5,D,Objectives
+2,5,D,Quality of information
+2,4,D,Quantity of information
+2,4,D,Visual information
+2,4,D,Credibility
+2,2,D,Scientific basis
+2,5,E,Would recommend
+2,5,E,Use if relevant
+2,1,E,Would pay
+2,4,E,General qualification
+2,5,F,Awareness
+2,5,F,Knowledge
+2,5,F,Aptitudes
+2,5,F,Intention to change
+2,4,F,Help seeking
+2,5,F,Behaviour change
+3,,A,Entertainment
+3,3,A,Interest
+3,1,A,Customization
+3,3,A,Interactivity
+3,4,A,Target group
+3,4,B,Performance
+3,3,B,Ease of use
+3,3,B,Navigation
+3,4,B,Gestural design
+3,4,C,Layout
+3,3,C,Graphics
+3,4,C,Visual appeal
+3,3,D,Precision in description
+3,4,D,Objectives
+3,3,D,Quality of information
+3,4,D,Quantity of information
+3,,D,Visual information
+3,3,D,Credibility
+3,3,D,Scientific basis
+3,3,E,Would recommend
+3,3,E,Use if relevant
+3,1,E,Would pay
+3,4,E,General qualification
+3,4,F,Awareness
+3,4,F,Knowledge
+3,4,F,Aptitudes
+3,4,F,Intention to change
+3,3,F,Help seeking
+3,3,F,Behaviour change
+4,5,A,Entertainment
+4,5,A,Interest
+4,5,A,Customization
+4,5,A,Interactivity
+4,5,A,Target group
+4,4,B,Performance
+4,4,B,Ease of use
+4,4,B,Navigation
+4,,B,Gestural design
+4,,C,Layout
+4,,C,Graphics
+4,4,C,Visual appeal
+4,4,D,Precision in description
+4,4,D,Objectives
+4,5,D,Quality of information
+4,,D,Quantity of information
+4,5,D,Visual information
+4,,D,Credibility
+4,5,D,Scientific basis
+4,4,E,Would recommend
+4,4,E,Use if relevant
+4,2,E,Would pay
+4,4,E,General qualification
+4,4,F,Awareness
+4,4,F,Knowledge
+4,5,F,Aptitudes
+4,5,F,Intention to change
+4,5,F,Help seeking
+4,4,F,Behaviour change
+5,,A,Entertainment
+5,,A,Interest
+5,,A,Customization
+5,4,A,Interactivity
+5,,A,Target group
+5,4,B,Performance
+5,5,B,Ease of use
+5,4,B,Navigation
+5,4,B,Gestural design
+5,3,C,Layout
+5,3,C,Graphics
+5,3,C,Visual appeal
+5,,D,Precision in description
+5,,D,Objectives
+5,4,D,Quality of information
+5,4,D,Quantity of information
+5,,D,Visual information
+5,3,D,Credibility
+5,,D,Scientific basis
+5,4,E,Would recommend
+5,,E,Use if relevant
+5,,E,Would pay
+5,,E,General qualification
+5,,F,Awareness
+5,,F,Knowledge
+5,,F,Aptitudes
+5,,F,Intention to change
+5,,F,Help seeking
+5,,F,Behaviour change
+6,4,A,Entertainment
+6,4,A,Interest
+6,1,A,Customization
+6,4,A,Interactivity
+6,5,A,Target group
+6,3,B,Performance
+6,4,B,Ease of use
+6,4,B,Navigation
+6,4,B,Gestural design
+6,4,C,Layout
+6,3,C,Graphics
+6,4,C,Visual appeal
+6,,D,Precision in description
+6,,D,Objectives
+6,,D,Quality of information
+6,,D,Quantity of information
+6,,D,Visual information
+6,,D,Credibility
+6,,D,Scientific basis
+6,5,E,Would recommend
+6,,E,Use if relevant
+6,2,E,Would pay
+6,4,E,General qualification
+6,5,F,Awareness
+6,5,F,Knowledge
+6,4,F,Aptitudes
+6,4,F,Intention to change
+6,4,F,Help seeking
+6,4,F,Behaviour change

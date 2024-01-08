@@ -1,0 +1,15 @@
+Date;Answer Id;Patient;Diagnosis;Diagnosis_date;Debut_diagnosis;Previous_admissions;Location;Affected_vessels;num_affected;stent;TC_stent;DA_stent;CX_stent;CD_stent;obtuse_stent;Valve_replacement;AF_presence;Devices;FEVE
+2023-04-04T09:47:33.564+0200;814;Patient 1;IAMEST;08/12/2022;No;Yes;Inferior, Lateral, Posterior;TC, DA, CX, CD;4;Yes;;;;Stent;;No;No;No;54
+2023-04-25T09:47:44.987+0200;1092;Patient 10;IAMSEST;31/03/2023;Yes;No;Indeterminado;DA, CD;2;Yes;;Stent;;Stent;;No;No;No;71
+2023-04-27T13:03:41.618+0200;1155;Patient 11;IAMEST;04/04/2023;Yes;No;Anterior, Lateral;DA, obtusa marginal;2;Yes;;Stent;;;Stent;No;No;No;70
+2023-04-13T13:15:42.769+0200;925;Patient 12;IAMSEST;29/11/2022;Yes;No;Lateral;DA, CX, CD;3;Yes;;;Stent;Stent;;No;No;No;64
+2023-04-27T12:57:55.035+0200;1151;Patient 13;IAMEST;02/01/2023;Yes;No;Inferior;DA;1;Yes;;Stent;;;;No;No;No;64
+2023-04-27T12:51:48.229+0200;1146;Patient 14;IAMEST;15/10/2022;Yes;No;Inferior, lateral;CX;1;No;;;;;;No;No;No;56
+2023-03-21T09:56:07.993+0100;625;Patient 2;IAMEST;09/01/2023;Yes;No;Inferior;CX, CD, obtusa marginal;3;Yes;;;;Stent;;No;No;No;76
+2023-03-29T14:10:09.433+0200;733;Patient 3;IAMSEST;17/01/2023;Yes;No;Anterior, Lateral;TC, DA, CX, CD;4;Yes;Stent;Stent;Stent;Stent;;No;No;No;55
+2023-04-13T13:05:39.248+0200;920;Patient 4;IAMEST;16/01/2023;Yes;No;Inferior;CD;1;Yes;;;;Stent;;No;No;No;54
+2023-04-04T09:37:39.679+0200;808;Patient 5;IAMSEST;21/01/2023;Yes;No;Indeterminado;Lesiones no significativas;0;No;;;;;;No;No;No;57
+2023-03-23T09:36:20.860+0100;662;Patient 6;IAMEST;14/01/2023;Yes;No;Inferior;CD;1;Yes;;;;Stent;;No;No;No;51
+2023-03-23T09:44:41.095+0100;667;Patient 7;IAMEST;24/09/2022;Yes;No;Anterior, Lateral;DA;1;Yes;;Stent;;;;No;No;No;55
+2023-03-21T11:41:49.335+0100;631;Patient 8;IAMSEST;20/11/2022;Yes;No;Anterior ;DA;1;Yes;;Stent;;;;No;No;No;67
+2023-05-08T13:47:31.782+0200;1324;Patient 9;IAMEST;15/03/2023;Yes;No;Inferior;CX, CD;2;Yes;;;;Stent;;No;No;No;72
