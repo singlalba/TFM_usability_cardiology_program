@@ -1,0 +1,304 @@
+---
+title: "Analysis of the MARS and uMARS"
+author: "Alba Singla"
+date: "`r Sys.Date()`"
+output:
+  html_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(dplyr)
+library(viridis)
+hrbrthemes::import_roboto_condensed()
+library(hrbrthemes)
+```
+Upload dataframe with the questionnaire answers.
+```{r}
+work_dir <- getwd()
+route <- file.path(work_dir, "dades_mars.csv")
+dades_mars <- read.csv(route)
+
+work_dir <- getwd()
+route <- file.path(work_dir, "dades_umars.csv")
+dades_umars <- read.csv(route)
+```
+
+# Qüestionari uMARS
+
+```{r}
+str(dades_umars)
+dades_umars$PREGUNTA <- as.factor(dades_umars$PREGUNTA) #Convert PREGUNTA in a categorical variable
+```
+
+
+Function to calculate mean, standard deviation, median, IQR and min-max in each section for uMARS.
+```{r}
+summary_umars <- 
+  function(dades_umars) {
+    means <- tapply(dades_umars$PUNTUACIO, dades_umars$SECCIO, mean, na.rm = TRUE)
+    std <- tapply(dades_umars$PUNTUACIO, dades_umars$SECCIO, sd, na.rm = TRUE)
+    median <- tapply(dades_umars$PUNTUACIO, dades_umars$SECCIO, median, na.rm = TRUE)
+    iqr <- tapply(dades_umars$PUNTUACIO, dades_umars$SECCIO, IQR, na.rm = TRUE)
+    min <- tapply(dades_umars$PUNTUACIO, dades_umars$SECCIO, min, na.rm = TRUE)
+    max <- tapply(dades_umars$PUNTUACIO, dades_umars$SECCIO, max, na.rm = TRUE)
+    results_umars <- data.frame(mean = means, stds = std, median = median, iqr = iqr, min = min, max = max)
+    return(results_umars)
+  }
+
+results_umars1 <- summary_umars(dades_umars)
+results_umars1$PREGUNTA <- c("A","B","C","D","E","EXTRA","F")
+print(results_umars1)
+```
+```{r}
+ggplot(results_umars1, aes(x = PREGUNTA, y = mean, fill = PREGUNTA)) +
+  geom_col(show.legend = FALSE) +
+  geom_errorbar(aes(ymin = min, ymax = max),position = position_dodge(width = 0.9), width = 0.25, alpha = 0.5) +
+  scale_fill_brewer(palette="Spectral") +
+  labs(title = "Mean value for each section in uMARS", x = "Section", y = "Mean") +
+  geom_text(aes(label = paste0(round(results_umars1$mean,2)), vjust = -0.5))
+```
+Function to calculate mean, standard deviation, median, IQR and min-max in each sub-section.
+```{r}
+summary_umars_pregunta <- 
+  function(dades_umars) {
+    means <- tapply(dades_umars$PUNTUACIO, dades_umars$PREGUNTA, mean, na.rm = TRUE)
+    std <- tapply(dades_umars$PUNTUACIO, dades_umars$PREGUNTA, sd, na.rm = TRUE)
+    median <- tapply(dades_umars$PUNTUACIO, dades_umars$PREGUNTA, median, na.rm = TRUE)
+    iqr <- tapply(dades_umars$PUNTUACIO, dades_umars$PREGUNTA, IQR, na.rm = TRUE)
+    min <- tapply(dades_umars$PUNTUACIO, dades_umars$PREGUNTA, min, na.rm = TRUE)
+    max <- tapply(dades_umars$PUNTUACIO, dades_umars$PREGUNTA, max, na.rm = TRUE)
+    results_umars_pregunta <- data.frame(mean = means, stds = std, median = median, iqr = iqr, min = min, max = max)
+    return(results_umars_pregunta)
+  }
+
+results_umars_pregunta <- summary_umars_pregunta(dades_umars)
+print(results_umars_pregunta)
+```
+```{r}
+subsec_umars <- subset(dades_umars, dades_umars$SECCIO %in% c("A","B","C","D"))
+subsec_umars$PUNTUACIO <- as.factor(subsec_umars$PUNTUACIO)
+
+labs_order <- c("Entertainment","Interest","Customization","Interactivity", "Target group","Performance","Ease of use","Navigation","Gestural design","Layout","Graphics","Visual appeal","Quality of information","Quantity of information","Visual information","Credibility")
+labs_order <- factor(labs_order, levels = unique(labs_order))
+
+percent4 <- subsec_umars %>%
+  group_by(PREGUNTA, PUNTUACIO) %>%
+  summarise(Freq = n()) %>%
+  group_by(PREGUNTA) %>%
+  mutate(Percent = Freq/sum(Freq)*100)
+```
+```{r}
+ggplot(percent4, aes(x = factor(PREGUNTA, levels = labs_order), y = Percent, fill = factor(PUNTUACIO))) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(title = "Distribution of uMARS answers", x = "Question", y = " ", fill = "Answer") +
+  geom_text(aes(label = sprintf("%.f%%", Percent)), position = position_stack(vjust = 0.5), size = 3, color = "black") +
+  scale_fill_brewer(palette = "Spectral") +
+  theme_minimal() +
+  scale_x_discrete(limits=rev) +
+  theme(axis.text.x=element_blank(), axis.ticks.x=element_blank())
+```
+Subjective quality
+```{r}
+subj_qual <- subset(dades_umars, dades_umars$SECCIO %in% c("E"))
+
+labs_order <- c("Would recommend","Use if relevant","Would pay","General qualification")
+labs_order <- factor(labs_order, levels = unique(labs_order))
+
+subj_qual$PUNTUACIO <- as.factor(subj_qual$PUNTUACIO)
+
+percent5 <- subj_qual %>%
+  group_by(PREGUNTA, PUNTUACIO) %>%
+  summarise(Freq = n()) %>%
+  group_by(PREGUNTA) %>%
+  mutate(Percent = Freq/sum(Freq)*100)
+```
+```{r}
+ggplot(percent5, aes(x = factor(PREGUNTA, levels = labs_order), y = Percent, fill = factor(PUNTUACIO))) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(title = "Distribution of uMARS answers for subjective quality", x = "Question", y = " ", fill = "Answer") +
+  geom_text(aes(label = sprintf("%.f%%", Percent)), position = position_stack(vjust = 0.5), size = 3, color = "black") +
+  scale_fill_brewer(palette = "Spectral") +
+  theme_minimal() +
+  scale_x_discrete(limits=rev) +
+  theme(axis.text.x=element_blank(), axis.ticks.x=element_blank())
+```
+Perceived impact
+```{r}
+perceived_impact <- subset(dades_umars, dades_umars$SECCIO %in% c("F"))
+
+labs_order <- c("Awareness","Knowledge","Aptitudes","Intention to change","Help seeking","Behaviour change")
+labs_order <- factor(labs_order, levels = unique(labs_order))
+
+perceived_impact$PUNTUACIO <- as.factor(perceived_impact$PUNTUACIO)
+
+percent6 <- perceived_impact %>%
+  group_by(PREGUNTA, PUNTUACIO) %>%
+  summarise(Freq = n()) %>%
+  group_by(PREGUNTA) %>%
+  mutate(Percent = Freq/sum(Freq)*100)
+```
+```{r}
+ggplot(percent6, aes(x = factor(PREGUNTA, levels = labs_order), y = Percent, fill = factor(PUNTUACIO))) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(title = "Distribution of uMARS answers for perceived impact", x = "Question", y = " ", fill = "Answer") +
+  geom_text(aes(label = sprintf("%.f%%", Percent)), position = position_stack(vjust = 0.5), size = 3, color = "black") +
+  scale_fill_brewer(palette = "Spectral") +
+  theme_minimal() +
+  scale_x_discrete(limits=rev) +
+  theme(axis.text.x=element_blank(), axis.ticks.x=element_blank())
+```
+Global mean and standard deviation.
+```{r}
+results_umars1$PREGUNTA <- c("A","B","C","D", "E","EXTRA", "F")
+
+subset_vector <- results_umars1$mean[results_umars1$PREGUNTA %in% c("A", "B", "C", "D")]
+mean_result <-mean(subset_vector)
+sd_result <- sd(subset_vector)
+print(mean_result)
+print(sd_result)
+```
+
+# Qüestionari MARS
+
+```{r}
+str(dades_mars)
+dades_mars <- na.omit(dades_mars)
+```
+
+Function to calculate mean, standard deviation, median, IQR and min-max in each section for MARS.
+```{r}
+summary_mars <- 
+  function(dades_mars) {
+    means <- tapply(dades_mars$PUNTUACIO, dades_mars$SECCIO, mean, na.rm = TRUE)
+    std <- tapply(dades_mars$PUNTUACIO, dades_mars$SECCIO, sd, na.rm = TRUE)
+    median <- tapply(dades_mars$PUNTUACIO, dades_mars$SECCIO, median, na.rm = TRUE)
+    iqr <- tapply(dades_mars$PUNTUACIO, dades_mars$SECCIO, IQR, na.rm = TRUE)
+    min <- tapply(dades_mars$PUNTUACIO, dades_mars$SECCIO, min, na.rm = TRUE)
+    max <- tapply(dades_mars$PUNTUACIO, dades_mars$SECCIO, max, na.rm = TRUE)
+    results_mars <- data.frame(mean = means, stds = std, median = median, iqr = iqr, min = min, max = max)
+    return(results_mars)
+  }
+
+results_mars1 <- summary_mars(dades_mars)
+results_mars1$PREGUNTA <- c("A","B","C","D","E","F")
+print(results_mars1)
+```
+
+```{r}
+ggplot(results_mars1, aes(x = PREGUNTA, y = mean, fill = PREGUNTA)) +
+  geom_col(show.legend = FALSE) +
+  geom_errorbar(aes(ymin = min, ymax = max),position = position_dodge(width = 0.9), width = 0.25, alpha = 0.5) +
+  scale_fill_brewer(palette="Spectral") +
+  labs(title = "Mean value for each section in MARS", x = "Section", y = "Mean") +
+  geom_text(aes(label = paste0(round(results_mars1$mean,2)), vjust = -0.5))
+```
+Function to calculate mean, standard deviation, median, IQR and min-max in each sub-section.
+```{r}
+summary_mars_pregunta <- 
+  function(dades_mars) {
+    means <- tapply(dades_mars$PUNTUACIO, dades_mars$PREGUNTA, mean, na.rm = TRUE)
+    std <- tapply(dades_mars$PUNTUACIO, dades_mars$PREGUNTA, sd, na.rm = TRUE)
+    median <- tapply(dades_mars$PUNTUACIO, dades_mars$PREGUNTA, median, na.rm = TRUE)
+    iqr <- tapply(dades_mars$PUNTUACIO, dades_mars$PREGUNTA, IQR, na.rm = TRUE)
+    min <- tapply(dades_mars$PUNTUACIO, dades_mars$PREGUNTA, min, na.rm = TRUE)
+    max <- tapply(dades_mars$PUNTUACIO, dades_mars$PREGUNTA, max, na.rm = TRUE)
+    results_mars_pregunta <- data.frame(mean = means, stds = std, median = median, iqr = iqr, min = min, max = max)
+    return(results_mars_pregunta)
+  }
+
+results_mars_pregunta <- summary_mars_pregunta(dades_mars)
+print(results_mars_pregunta)
+```
+Barplot of each sub-section of MARS with % of answers for each question.
+```{r}
+subsec <- subset(dades_mars, dades_mars$SECCIO %in% c("A","B","C","D"))
+
+subsec$PUNTUACIO <- as.factor(subsec$PUNTUACIO)
+
+labs_order <- c("Entertainment","Interest","Customization","Interactivity", "Target group","Performance","Ease of use","Navigation","Gestural design","Layout","Graphics","Visual appeal","Precision in description","Objectives","Quality of information","Quantity of information","Visual information","Credibility","Scientific basis")
+labs_order <- factor(labs_order, levels = unique(labs_order))
+
+percent <- subsec %>%
+  group_by(PREGUNTA, PUNTUACIO) %>%
+  summarise(Freq = n()) %>%
+  group_by(PREGUNTA) %>%
+  mutate(Percent = Freq/sum(Freq)*100)
+```
+```{r}
+ggplot(percent, aes(x = factor(PREGUNTA, levels = labs_order), y = Percent, fill = factor(PUNTUACIO))) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(title = "Distribution of MARS answers", x = "Question", y = " ", fill = "Answer") +
+  geom_text(aes(label = sprintf("%.f%%", Percent)), position = position_stack(vjust = 0.5), size = 3, color = "black") +
+  scale_fill_brewer(palette = "Spectral") +
+  theme_minimal() +
+  scale_x_discrete(limits=rev) +
+  theme(axis.text.x=element_blank(), axis.ticks.x=element_blank())
+```
+
+Global mean and standard deviation.
+```{r}
+subset_vector2 <- results_mars1$mean[results_mars1$PREGUNTA %in% c("A", "B", "C", "D")]
+mean_result2 <-mean(subset_vector2)
+sd_result2 <- sd(subset_vector2)
+print(mean_result2)
+print(sd_result2)
+```
+Subjective quality
+```{r}
+subj_qual <- subset(dades_mars, dades_mars$SECCIO %in% c("E"))
+
+labs_order <- c("Would recommend","Use if relevant","Would pay","General qualification")
+labs_order <- factor(labs_order, levels = unique(labs_order))
+
+subj_qual$PUNTUACIO <- as.factor(subj_qual$PUNTUACIO)
+
+percent2 <- subj_qual %>%
+  group_by(PREGUNTA, PUNTUACIO) %>%
+  summarise(Freq = n()) %>%
+  group_by(PREGUNTA) %>%
+  mutate(Percent = Freq/sum(Freq)*100)
+```
+```{r}
+ggplot(percent2, aes(x = factor(PREGUNTA, levels = labs_order), y = Percent, fill = factor(PUNTUACIO))) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(title = "Distribution of MARS answers for subjective quality", x = "Question", y = " ", fill = "Answer") +
+  geom_text(aes(label = sprintf("%.f%%", Percent)), position = position_stack(vjust = 0.5), size = 3, color = "black") +
+  scale_fill_brewer(palette = "Spectral") +
+  theme_minimal() +
+  scale_x_discrete(limits=rev) +
+  theme(axis.text.x=element_blank(), axis.ticks.x=element_blank())
+```
+Perceived impact
+```{r}
+perceived_impact <- subset(dades_mars, dades_mars$SECCIO %in% c("F"))
+
+labs_order <- c("Awareness","Knowledge","Aptitudes","Intention to change","Help seeking","Behaviour change")
+labs_order <- factor(labs_order, levels = unique(labs_order))
+
+perceived_impact$PUNTUACIO <- as.factor(perceived_impact$PUNTUACIO)
+
+percent3 <- perceived_impact %>%
+  group_by(PREGUNTA, PUNTUACIO) %>%
+  summarise(Freq = n()) %>%
+  group_by(PREGUNTA) %>%
+  mutate(Percent = Freq/sum(Freq)*100)
+```
+```{r}
+ggplot(percent3, aes(x = factor(PREGUNTA, levels = labs_order), y = Percent, fill = factor(PUNTUACIO))) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(title = "Distribution of MARS answers for perceived impact", x = "Question", y = " ", fill = "Answer") +
+  geom_text(aes(label = sprintf("%.f%%", Percent)), position = position_stack(vjust = 0.5), size = 3, color = "black") +
+  scale_fill_brewer(palette = "Spectral") +
+  theme_minimal() +
+  scale_x_discrete(limits=rev) +
+  theme(axis.text.x=element_blank(), axis.ticks.x=element_blank())
+```
+

@@ -1,0 +1,421 @@
+PACIENT,PUNTUACIO,SECCIO,PREGUNTA
+1,2,A,Entertainment
+1,4,A,Interest
+1,5,A,Customization
+1,4,A,Interactivity
+1,5,A,Target group
+1,5,B,Performance
+1,4,B,Ease of use
+1,5,B,Navigation
+1,4,B,Gestural design
+1,5,C,Layout
+1,4,C,Graphics
+1,4,C,Visual appeal
+1,5,D,Quality of information
+1,4,D,Quantity of information
+1,4,D,Visual information
+1,5,D,Credibility
+1,5,E,Would recommend
+1,5,E,Use if relevant
+1,1,E,Would pay
+1,4,E,General qualification
+1,5,F,Awareness
+1,5,F,Knowledge
+1,4,F,Aptitudes
+1,4,F,Intention to change
+1,5,F,Help seeking
+1,4,F,Behaviour change
+2,5,A,Entertainment
+2,5,A,Interest
+2,2,A,Customization
+2,3,A,Interactivity
+2,4,A,Target group
+2,4,B,Performance
+2,3,B,Ease of use
+2,4,B,Navigation
+2,4,B,Gestural design
+2,5,C,Layout
+2,4,C,Graphics
+2,5,C,Visual appeal
+2,4,D,Quality of information
+2,4,D,Quantity of information
+2,4,D,Visual information
+2,5,D,Credibility
+2,5,E,Would recommend
+2,5,E,Use if relevant
+2,5,E,Would pay
+2,3,E,General qualification
+2,5,F,Awareness
+2,5,F,Knowledge
+2,5,F,Aptitudes
+2,4,F,Intention to change
+2,4,F,Help seeking
+2,4,F,Behaviour change
+3,4,A,Entertainment
+3,4,A,Interest
+3,3,A,Customization
+3,3,A,Interactivity
+3,5,A,Target group
+3,4,B,Performance
+3,3,B,Ease of use
+3,4,B,Navigation
+3,5,B,Gestural design
+3,5,C,Layout
+3,3,C,Graphics
+3,4,C,Visual appeal
+3,4,D,Quality of information
+3,4,D,Quantity of information
+3,4,D,Visual information
+3,5,D,Credibility
+3,5,E,Would recommend
+3,4,E,Use if relevant
+3,1,E,Would pay
+3,3,E,General qualification
+3,5,F,Awareness
+3,4,F,Knowledge
+3,5,F,Aptitudes
+3,5,F,Intention to change
+3,4,F,Help seeking
+3,4,F,Behaviour change
+4,5,A,Entertainment
+4,5,A,Interest
+4,4,A,Customization
+4,4,A,Interactivity
+4,4,A,Target group
+4,5,B,Performance
+4,4,B,Ease of use
+4,4,B,Navigation
+4,4,B,Gestural design
+4,4,C,Layout
+4,3,C,Graphics
+4,4,C,Visual appeal
+4,3,D,Quality of information
+4,4,D,Quantity of information
+4,5,D,Visual information
+4,5,D,Credibility
+4,5,E,Would recommend
+4,4,E,Use if relevant
+4,5,E,Would pay
+4,5,E,General qualification
+4,5,F,Awareness
+4,5,F,Knowledge
+4,5,F,Aptitudes
+4,5,F,Intention to change
+4,5,F,Help seeking
+4,5,F,Behaviour change
+5,5,A,Entertainment
+5,5,A,Interest
+5,5,A,Customization
+5,4,A,Interactivity
+5,5,A,Target group
+5,4,B,Performance
+5,5,B,Ease of use
+5,4,B,Navigation
+5,4,B,Gestural design
+5,5,C,Layout
+5,4,C,Graphics
+5,4,C,Visual appeal
+5,5,D,Quality of information
+5,5,D,Quantity of information
+5,4,D,Visual information
+5,5,D,Credibility
+5,5,E,Would recommend
+5,5,E,Use if relevant
+5,5,E,Would pay
+5,4,E,General qualification
+5,4,F,Awareness
+5,5,F,Knowledge
+5,4,F,Aptitudes
+5,5,F,Intention to change
+5,4,F,Help seeking
+5,5,F,Behaviour change
+6,5,A,Entertainment
+6,,A,Interest
+6,1,A,Customization
+6,2,A,Interactivity
+6,4,A,Target group
+6,2,B,Performance
+6,3,B,Ease of use
+6,3,B,Navigation
+6,3,B,Gestural design
+6,4,C,Layout
+6,4,C,Graphics
+6,5,C,Visual appeal
+6,5,D,Quality of information
+6,4,D,Quantity of information
+6,5,D,Visual information
+6,5,D,Credibility
+6,4,E,Would recommend
+6,5,E,Use if relevant
+6,4,E,Would pay
+6,,E,General qualification
+6,5,F,Awareness
+6,5,F,Knowledge
+6,5,F,Aptitudes
+6,5,F,Intention to change
+6,5,F,Help seeking
+6,5,F,Behaviour change
+7,5,A,Entertainment
+7,5,A,Interest
+7,5,A,Customization
+7,5,A,Interactivity
+7,3,A,Target group
+7,4,B,Performance
+7,3,B,Ease of use
+7,3,B,Navigation
+7,4,B,Gestural design
+7,4,C,Layout
+7,4,C,Graphics
+7,4,C,Visual appeal
+7,4,D,Quality of information
+7,4,D,Quantity of information
+7,3,D,Visual information
+7,5,D,Credibility
+7,5,E,Would recommend
+7,5,E,Use if relevant
+7,1,E,Would pay
+7,5,E,General qualification
+7,5,F,Awareness
+7,5,F,Knowledge
+7,5,F,Aptitudes
+7,5,F,Intention to change
+7,5,F,Help seeking
+7,5,F,Behaviour change
+8,5,A,Entertainment
+8,5,A,Interest
+8,5,A,Customization
+8,4,A,Interactivity
+8,5,A,Target group
+8,5,B,Performance
+8,4,B,Ease of use
+8,3,B,Navigation
+8,4,B,Gestural design
+8,4,C,Layout
+8,4,C,Graphics
+8,4,C,Visual appeal
+8,5,D,Quality of information
+8,5,D,Quantity of information
+8,5,D,Visual information
+8,5,D,Credibility
+8,5,E,Would recommend
+8,5,E,Use if relevant
+8,,E,Would pay
+8,5,E,General qualification
+8,5,F,Awareness
+8,5,F,Knowledge
+8,5,F,Aptitudes
+8,5,F,Intention to change
+8,4,F,Help seeking
+8,4,F,Behaviour change
+9,5,A,Entertainment
+9,4,A,Interest
+9,3,A,Customization
+9,3,A,Interactivity
+9,4,A,Target group
+9,3,B,Performance
+9,3,B,Ease of use
+9,3,B,Navigation
+9,3,B,Gestural design
+9,4,C,Layout
+9,3,C,Graphics
+9,4,C,Visual appeal
+9,3,D,Quality of information
+9,3,D,Quantity of information
+9,4,D,Visual information
+9,4,D,Credibility
+9,4,E,Would recommend
+9,4,E,Use if relevant
+9,,E,Would pay
+9,3,E,General qualification
+9,3,F,Awareness
+9,4,F,Knowledge
+9,4,F,Aptitudes
+9,4,F,Intention to change
+9,3,F,Help seeking
+9,3,F,Behaviour change
+10,3,A,Entertainment
+10,4,A,Interest
+10,3,A,Customization
+10,3,A,Interactivity
+10,4,A,Target group
+10,3,B,Performance
+10,4,B,Ease of use
+10,4,B,Navigation
+10,4,B,Gestural design
+10,4,C,Layout
+10,3,C,Graphics
+10,4,C,Visual appeal
+10,4,D,Quality of information
+10,4,D,Quantity of information
+10,4,D,Visual information
+10,5,D,Credibility
+10,4,E,Would recommend
+10,3,E,Use if relevant
+10,1,E,Would pay
+10,3,E,General qualification
+10,4,F,Awareness
+10,4,F,Knowledge
+10,4,F,Aptitudes
+10,4,F,Intention to change
+10,4,F,Help seeking
+10,5,F,Behaviour change
+11,5,A,Entertainment
+11,5,A,Interest
+11,5,A,Customization
+11,5,A,Interactivity
+11,4,A,Target group
+11,4,B,Performance
+11,4,B,Ease of use
+11,5,B,Navigation
+11,5,B,Gestural design
+11,5,C,Layout
+11,5,C,Graphics
+11,4,C,Visual appeal
+11,5,D,Quality of information
+11,4,D,Quantity of information
+11,5,D,Visual information
+11,5,D,Credibility
+11,5,E,Would recommend
+11,4,E,Use if relevant
+11,5,E,Would pay
+11,3,E,General qualification
+11,5,F,Awareness
+11,5,F,Knowledge
+11,5,F,Aptitudes
+11,5,F,Intention to change
+11,5,F,Help seeking
+11,5,F,Behaviour change
+12,3,A,Entertainment
+12,4,A,Interest
+12,2,A,Customization
+12,2,A,Interactivity
+12,3,A,Target group
+12,2,B,Performance
+12,4,B,Ease of use
+12,4,B,Navigation
+12,4,B,Gestural design
+12,4,C,Layout
+12,4,C,Graphics
+12,4,C,Visual appeal
+12,4,D,Quality of information
+12,4,D,Quantity of information
+12,4,D,Visual information
+12,5,D,Credibility
+12,4,E,Would recommend
+12,4,E,Use if relevant
+12,1,E,Would pay
+12,3,E,General qualification
+12,4,F,Awareness
+12,4,F,Knowledge
+12,4,F,Aptitudes
+12,4,F,Intention to change
+12,4,F,Help seeking
+12,4,F,Behaviour change
+13,1,A,Entertainment
+13,3,A,Interest
+13,2,A,Customization
+13,3,A,Interactivity
+13,5,A,Target group
+13,3,B,Performance
+13,5,B,Ease of use
+13,5,B,Navigation
+13,5,B,Gestural design
+13,5,C,Layout
+13,5,C,Graphics
+13,4,C,Visual appeal
+13,5,D,Quality of information
+13,5,D,Quantity of information
+13,5,D,Visual information
+13,5,D,Credibility
+13,3,E,Would recommend
+13,3,E,Use if relevant
+13,1,E,Would pay
+13,3,E,General qualification
+13,3,F,Awareness
+13,4,F,Knowledge
+13,2,F,Aptitudes
+13,3,F,Intention to change
+13,2,F,Help seeking
+13,3,F,Behaviour change
+14,2,A,Entertainment
+14,4,A,Interest
+14,2,A,Customization
+14,3,A,Interactivity
+14,3,A,Target group
+14,4,B,Performance
+14,4,B,Ease of use
+14,5,B,Navigation
+14,5,B,Gestural design
+14,5,C,Layout
+14,5,C,Graphics
+14,5,C,Visual appeal
+14,5,D,Quality of information
+14,5,D,Quantity of information
+14,5,D,Visual information
+14,5,D,Credibility
+14,5,E,Would recommend
+14,1,E,Use if relevant
+14,1,E,Would pay
+14,3,E,General qualification
+14,5,F,Awareness
+14,5,F,Knowledge
+14,3,F,Aptitudes
+14,3,F,Intention to change
+14,4,F,Help seeking
+14,3,F,Behaviour change
+1,5,EXTRA,Useful
+1,5,EXTRA,Safe
+1,5,EXTRA,Chat
+1,5,EXTRA,Calendar
+2,5,EXTRA,Useful
+2,5,EXTRA,Safe
+2,5,EXTRA,Chat
+2,5,EXTRA,Calendar
+3,5,EXTRA,Useful
+3,5,EXTRA,Safe
+3,5,EXTRA,Chat
+3,5,EXTRA,Calendar
+4,5,EXTRA,Useful
+4,5,EXTRA,Safe
+4,5,EXTRA,Chat
+4,5,EXTRA,Calendar
+5,5,EXTRA,Useful
+5,5,EXTRA,Safe
+5,5,EXTRA,Chat
+5,5,EXTRA,Calendar
+6,5,EXTRA,Useful
+6,5,EXTRA,Safe
+6,5,EXTRA,Chat
+6,5,EXTRA,Calendar
+7,,EXTRA,Useful
+7,3,EXTRA,Safe
+7,,EXTRA,Chat
+7,,EXTRA,Calendar
+8,5,EXTRA,Useful
+8,5,EXTRA,Safe
+8,5,EXTRA,Chat
+8,5,EXTRA,Calendar
+9,4,EXTRA,Useful
+9,4,EXTRA,Safe
+9,5,EXTRA,Chat
+9,3,EXTRA,Calendar
+10,5,EXTRA,Useful
+10,5,EXTRA,Safe
+10,5,EXTRA,Chat
+10,5,EXTRA,Calendar
+11,5,EXTRA,Useful
+11,5,EXTRA,Safe
+11,3,EXTRA,Chat
+11,5,EXTRA,Calendar
+12,4,EXTRA,Useful
+12,4,EXTRA,Safe
+12,5,EXTRA,Chat
+12,5,EXTRA,Calendar
+13,5,EXTRA,Useful
+13,5,EXTRA,Safe
+13,5,EXTRA,Chat
+13,5,EXTRA,Calendar
+14,4,EXTRA,Useful
+14,4,EXTRA,Safe
+14,5,EXTRA,Chat
+14,4,EXTRA,Calendar
